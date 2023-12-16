@@ -1,0 +1,84 @@
+$White: hsl(0, 0%, 100%);
+$Lightgray: hsl(212, 45%, 89%);
+$Grayishblue: hsl(220, 15%, 55%);
+$Darkblue: hsl(218, 44%, 22%);
+$black:hsl(0, 0%, 0%);
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175);
+$box-shadow-sm: 0 .125rem .25rem rgba($black, .075);
+
+
+@import './reset.scss';
+
+@font-face {
+    font-family: 'Outfit', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=Outfit) format('woff2');
+}
+
+@mixin Mobile{
+    @media(max-width: 375px){
+        @content;
+    }
+}
+
+body{
+    background-color: $Lightgray;
+    font-family: 'Outfit';
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    @include Mobile{
+        margin-top: 22.5%;
+      }
+}
+
+.card{
+    width: 290px;
+    height: 460px;
+    padding: 20px 20px 20px;
+    margin-bottom: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: $box-shadow-lg;
+    background-color: $White;
+    @include Mobile{
+        width: 290px;
+        padding: 4% 4% 6% 4%;
+        box-shadow: $box-shadow-sm;
+      }
+
+    img{
+        max-width: 100%;
+        border-radius: 3%;
+        margin-bottom: 25px;
+    }
+
+    .title{
+        padding: 0% 6%;
+        
+        h1{
+            color: $Darkblue;
+            text-align: center;
+            padding-bottom: 12px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+        }
+    
+        p{
+            color:$Grayishblue;
+            font-size: 15px;
+            text-align: center;
+            font-weight: 400;
+            line-height: 20px;
+        }
+    }
+    
+}
+
+
